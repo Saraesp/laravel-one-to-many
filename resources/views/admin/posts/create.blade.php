@@ -26,6 +26,16 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="" class="control-label">
+                        Tipologie:
+                    </label>
+                    <select class="form-control" name="" id="">
+                        @foreach ($types as $type)
+                            <option value="{{$type->id}}">{{$type->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group my-3">
+                    <label for="" class="control-label">
                         Contenuto
                     </label>
                     <textarea name="content" id="content" class="form-control" placeholder="Contenuto"> </textarea>

@@ -26,6 +26,7 @@ class StorePostRequest extends FormRequest
         return [
             'title' => ['required', 'unique:posts', 'max:150'],
             'content' => ['nullable'],
+            'type_id'  => ['nullable', 'exists:types.id'],
         ];
     }
 
@@ -35,7 +36,6 @@ class StorePostRequest extends FormRequest
             'title.required' => 'Il titolo è richiesto',
             'title.unique' => 'E\' già presente un post con questo titolo',
             'title.max' => 'Il titolo è troppo lungo',
-
         ];
     }
 }
