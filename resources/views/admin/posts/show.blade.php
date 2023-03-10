@@ -14,7 +14,8 @@
             </div>
         </div>
         <div class="col-12">
-            <p><strong>Slug:</strong>{{$post->slug}}</p>
+            <p><strong>Slug:</strong> {{$post->slug}}</p>
+            <p><strong>Tipologia:</strong> {{$post->type ? $post->type->name : 'Senza Tipologia'}}</p>
             <label for="" class="d-block"><strong>Contenuto:</strong></label>
             <p>{{$post->content}}</p>
         </div>

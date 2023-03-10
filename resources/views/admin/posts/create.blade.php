@@ -20,15 +20,15 @@
                 @csrf
                 <div class="form-group my-3">
                     <label for="" class="control-label">
-                        Titolo
+                        <strong>Titolo:</strong> 
                     </label>
                     <input type="text" name="title" id="title" class="form-control" placeholder="Titolo">
                 </div>
                 <div class="form-group my-3">
                     <label for="" class="control-label">
-                        Tipologie:
+                       <strong>Tipologie:</strong> 
                     </label>
-                    <select class="form-control" name="" id="">
+                    <select class="form-control" name="type_id" id="type_id">
                         @foreach ($types as $type)
                             <option value="{{$type->id}}">{{$type->name}}</option>
                         @endforeach
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="" class="control-label">
-                        Contenuto
+                      <strong>Contenuto:</strong>  
                     </label>
                     <textarea name="content" id="content" class="form-control" placeholder="Contenuto"> </textarea>
                 </div>

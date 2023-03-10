@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\Belongsto;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -10,7 +11,7 @@ use App\Models\Type;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'content', 'slug'];
+    protected $fillable = ['title', 'content', 'slug', 'type_id'];
 
     use HasFactory;
 
@@ -19,6 +20,6 @@ class Post extends Model
     }
 
     public function type(){
-        return $this->belongTo(Type::class);
+        return $this->belongsTo(Type::class);
     }
 }
