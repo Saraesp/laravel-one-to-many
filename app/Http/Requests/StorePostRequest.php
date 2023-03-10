@@ -24,9 +24,9 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'unique:posts', 'max:150'],
+            'title'   => ['required', 'unique:posts', 'max:150'],
             'content' => ['nullable'],
-            'type_id'  => ['nullable', 'exists:types,id'],
+            'type_id' => ['nullable', 'exists:types,id'],
         ];
     }
 
@@ -34,8 +34,8 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title.required' => 'Il titolo è richiesto',
-            'title.unique' => 'E\' già presente un post con questo titolo',
-            'title.max' => 'Il titolo è troppo lungo',
+            'title.unique'   => 'E\' già presente un post con questo titolo',
+            'title.max'      => 'Il titolo è troppo lungo',
             'type_id.exists' => 'Selezionare una Tipologia'
 
         ];

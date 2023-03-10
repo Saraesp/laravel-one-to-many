@@ -38,7 +38,7 @@
                         @endforeach
                     </select>
                     @error('type_id')
-                    <div class="text-danger">{{ $messages }}</div>
+                    <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group my-3">
