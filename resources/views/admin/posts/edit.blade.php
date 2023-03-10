@@ -27,6 +27,22 @@
                 </div>
                 <div class="form-group my-3">
                     <label for="" class="control-label">
+                       <strong>Tipologie:</strong> 
+                    </label>
+                    <select class="form-control" name="type_id" id="type_id">
+                        <option value="">Seleziona Tipologia</option>
+                        @foreach ($types as $type)
+                            <option value="{{$type->id}}" {{$type->id == old('type_id', $post->type_id) ? 'selected' : '' }}>
+                                {{$type->name}}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('type_id')
+                    <div class="text-danger">{{ $messages }}</div>
+                    @enderror
+                </div>
+                <div class="form-group my-3">
+                    <label for="" class="control-label">
                         Contenuto
                     </label>
                     <textarea name="content" id="content" class="form-control" placeholder="Contenuto" value="{{ old('content') ?? $post->content}}"> </textarea>

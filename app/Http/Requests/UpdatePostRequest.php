@@ -25,8 +25,9 @@ class UpdatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', Rule::unique('posts')->ignore($this->post), 'max:150'],
+            'title'   => ['required', Rule::unique('posts')->ignore($this->post), 'max:150'],
             'content' => ['nullable'],
+            'type_id' => ['nullable', 'exists:types,id']
         ];
     }
 
@@ -34,8 +35,9 @@ class UpdatePostRequest extends FormRequest
     {
         return [
             'title.required' => 'Il titolo è richiesto',
-            'title.unique' => 'E\' già presente un post con questo titolo',
-            'title.max' => 'Il titolo è troppo lungo',
+            'title.unique'   => 'E\' già presente un post con questo titolo',
+            'title.max'      => 'Il titolo è troppo lungo',
+            'type_id.exists' => 'Selezionare una Tipologia'
 
         ];
     }
