@@ -28,7 +28,16 @@
                 </thead>
 
                 <tbody>
-                    
+                    @foreach ($types as $type)
+                        <tr>
+                            <td>{{ $type->id }}</td>
+                            <td>{{ $type->name }}</td>
+                            <td>{{ $type->slug }}</td>
+                            <td>
+                                <a href="{{ route('admin.types.show', $type->slug) }}" class="btn btn-sm btn-square btn-primary"><i class="fas fa-eye"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
