@@ -38,14 +38,15 @@
                         @endforeach
                     </select>
                     @error('type_id')
-                    <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ $messages }}</div>
                     @enderror
                 </div>
                 <div class="form-group my-3">
                     <label for="" class="control-label">
                         Contenuto
                     </label>
-                    <textarea name="content" id="content" class="form-control" placeholder="Contenuto" value="{{ old('content') ?? $post->content}}"> </textarea>
+                    <textarea name="content" id="content" class="form-control" placeholder="Contenuto" {{$type->content == old('content', $post->content) ? 'selected' : '' }}> 
+                    </textarea>
                 </div>
                 <div class="form-group my-3">
                     <button type="submit" class="btn btn-sm btn-success">Salva post</button>
